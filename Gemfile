@@ -46,7 +46,7 @@ group :development do
   # Use Mina for deployment
   gem 'mina'
   gem 'mina-puma', :require => false
-  gem 'mina-sidekiq'
+  gem 'mina-sidekiq', :require => false
 
   # livereload
   gem 'guard'

@@ -35,6 +35,7 @@ bower.json
 .powenv
 
 # config setting
-/config/*.yml
+/config/database.yml
+/config/secrets.yml
 /config/deploy.rb
 /public/uploads/*
