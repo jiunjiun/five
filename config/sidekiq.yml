@@ -1,6 +1,7 @@
 ---
 :concurrency: 5
-:pidfile: tmp/pids/sidekiq.pid
+:logfile: ../shared/log/sidekiq.log
+:pidfile: ../shared/pids/sidekiq.pid
 staging:
   :concurrency: 10
 production:
