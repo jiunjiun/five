@@ -14,3 +14,4 @@ zh-TW:
       yymmdd_s: '%Y/%m/%d'
       ymds: '%Y/%m/%d-%T'
       long: '%Y年%m月%d日 %T'
+      HMS: '%H:%M'

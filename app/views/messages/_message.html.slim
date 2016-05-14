@@ -6,7 +6,8 @@
       - else
         = t('helpers.you_say')
       = t('helpers.says')
-
+      span.pull-right
+        = l message.created_at, format: :HMS
     .message-text
       = message.content
   /! / .message-body

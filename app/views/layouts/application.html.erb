@@ -8,7 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="theme-asphalt main-menu-animated" cz-shortcut-listen="true">
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
