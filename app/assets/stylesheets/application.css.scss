@@ -10,6 +10,23 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require PixelAdmin/bootstrap.min
+ *= require PixelAdmin/pixel-admin.min
+ *= require PixelAdmin/widgets.min
+ *= require PixelAdmin/rtl.min
+ *= require PixelAdmin/themes.min
  */
+
+@import 'font-awesome';
+
+.widget-chat {
+  .message .message-body {
+    margin-left: 0;
+    margin-right: 40%;
+  }
+
+  .message.right .message-body {
+    margin-right: 0;
+    margin-left: 40%;
+  }
+}

@@ -1,6 +1,12 @@
-h1 Chat room
-#messages
-form
-  label Say something:
-  br/
-  input data-behavior="room_speaker" type="text" /
+h1 Five
+.panel.widget-chat
+  .panel-heading
+    span.panel-title
+      i.panel-title-icon.fa.fa-comments-o
+      | Chat
+  /! / .panel-heading
+  .panel-body#messages
+  form.panel-footer.chat-controls
+    .chat-controls-input
+      = text_field_tag 'content', nil, class: 'form-control', placeholder: t('helpers.say_something'), data: {behavior: "chat_speaker"}
+    = button_tag t('helpers.send'), class: 'btn btn-primary chat-controls-btn'

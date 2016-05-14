@@ -1,0 +1,16 @@
+zh-TW:
+  title        : 'Five'
+
+  helpers:
+    says: '說: '
+    send: '送出'
+    say_something: '說些什麼吧!'
+    self_say: '我'
+    you_say: '他'
+
+  time:
+    formats:
+      yymmdd: '%Y年%m月%d日'
+      yymmdd_s: '%Y/%m/%d'
+      ymds: '%Y/%m/%d-%T'
+      long: '%Y年%m月%d日 %T'

@@ -8,15 +8,23 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
+    console.log 'received'
     $('#messages').append data['message']
 
   speak: (content) ->
     @perform 'speak', content: content
 
-$(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
+$(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
   if event.keyCode is 13 # return/enter = send
-    App.chat.speak event.target.value
-    event.target.value = ''
-    event.preventDefault()
-
+    speak()
     return false
+
+$('.chat-controls-btn').click ->
+  speak()
+  return false
+
+speak = ->
+  content = $('.chat-controls-input input')
+  App.chat.speak content.val()
+  content.val('')
+

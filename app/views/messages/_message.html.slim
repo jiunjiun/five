@@ -1,8 +1,13 @@
-.chat-line
-  span.speaker
-    - if whosay == 'self'
-      | 我說：
-    - else
-      | 他說：
-  span.content
-    = message.content
+.message class="#{whosay == 'self' ? 'right' : ''}"
+  .message-body
+    .message-heading
+      - if whosay == 'self'
+        = t('helpers.self_say')
+      - else
+        = t('helpers.you_say')
+      = t('helpers.says')
+
+    .message-text
+      = message.content
+  /! / .message-body
+/! / .message
