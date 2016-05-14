@@ -42,6 +42,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Use Mina for deployment
+  gem 'mina'
+  gem 'mina-puma', :require => false
+
+  # livereload
+  gem 'guard'
+  gem 'guard-livereload'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -52,10 +60,12 @@ gem 'active_hash'
 gem 'decent_exposure', '3.0.0.beta2'
 
 # form
-gem 'simple_form'
+# gem 'simple_form'
 
 # Style
 gem 'slim'
 gem 'slim-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 
 gem 'jquery-cookie-rails'
