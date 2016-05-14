@@ -1,0 +1,8 @@
+.chat-line
+  span.speaker
+    - if whosay == 'self'
+      | 我說：
+    - else
+      | 他說：
+  span.content
+    = message.content
