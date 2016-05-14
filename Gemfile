@@ -46,6 +46,7 @@ group :development do
   # Use Mina for deployment
   gem 'mina'
   gem 'mina-puma', :require => false
+  gem 'mina-sidekiq'
 
   # livereload
   gem 'guard'
@@ -66,6 +67,10 @@ group :development, :test do # 也包含 test 是為了讓寫 test case 時也�
   gem "rspec-rails"
   gem "factory_girl_rails"
 end
+
+# job
+gem 'sidekiq'
+gem 'sidekiq-status'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
