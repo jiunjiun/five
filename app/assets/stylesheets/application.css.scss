@@ -19,7 +19,23 @@
 
 @import 'font-awesome';
 
+html, body {
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+
+.container {
+  height: 85%;
+}
+
 .widget-chat {
+  height: 100%;
+  .panel-body {
+    height: 85%;
+    overflow: auto;
+  }
+
   .message .message-body {
     margin-left: 0;
     margin-right: 40%;
@@ -29,4 +45,7 @@
     margin-right: 0;
     margin-left: 40%;
   }
+
+  button.exit { float: left;}
+  .chat-controls-input { margin-left: 55px; }
 }

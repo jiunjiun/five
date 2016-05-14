@@ -7,6 +7,7 @@ zh-TW:
     say_something: '說些什麼吧!'
     self_say: '我'
     you_say: '他'
+    exit: '離開'
 
   time:
     formats:
