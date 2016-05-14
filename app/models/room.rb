@@ -1,8 +1,8 @@
 class Room < ApplicationRecord
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   def self.find_by_user_token(user_token)
-    Room.find_by_token($redis.get("user_#{user_token}"))
+    Room.where(token: $redis.get("user_#{user_token}"), forfeit_at: nil).last
   end
 
   def forfeit

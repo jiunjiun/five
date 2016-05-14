@@ -8,13 +8,16 @@ class ChatChannel < ApplicationCable::Channel
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
-    Seek.remove(current_user)
-    room = Room.find_by_user_token(current_user)
-    room.forfeit if room.present?
   end
 
   def speak(data)
     room = Room.find_by_user_token(current_user)
     room.messages.create(user_token: current_user, content: data['content'])
+  end
+
+  def exit
+    Seek.remove(current_user)
+    room = Room.find_by_user_token(current_user)
+    room.forfeit if room.present?
   end
 end
