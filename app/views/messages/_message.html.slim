@@ -1,7 +1,8 @@
-.message class="#{whosay == 'self' ? 'right' : ''}"
+- whosay = cookies[:user_token] if cookies[:user_token].present?
+.message class="#{self_say?(message.user_token, whosay) ? 'right' : ''}"
   .message-body
     .message-heading
-      - if whosay == 'self'
+      - if self_say?(message.user_token, whosay)
         = t('helpers.self_say')
       - else
         = t('helpers.you_say')
