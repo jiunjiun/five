@@ -1,11 +1,9 @@
 App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
   connected: ->
-    console.log 'connected'
     $('#messages').scrollTop(99999);
     # Called when the subscription is ready for use on the server
 
   disconnected: ->
-    console.log 'disconnected'
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
@@ -38,6 +36,7 @@ $(document).on 'click', '.exit', ->
     confirmButtonText: '確定離開').then (isConfirm) ->
     if isConfirm
       App.chat.exit()
+      $('#messages').html('')
     return
   return false
 
