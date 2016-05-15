@@ -27,7 +27,7 @@ class ChatChannel < ApplicationCable::Channel
 
       user_tokens = $redis.smembers "room_#{room.token}"
       notice_another_user = user_tokens.reject {|token| token == current_user}.first
-      ActionCable.server.broadcast "chat_#{notice_another_user}", action: Room::Actions::EXIT, message: render_leave_message(room)
+      ActionCable.server.broadcast "chat_#{notice_another_user}", action: Room::Actions::LEAVE, message: render_leave_message(room)
     end
     $redis.del "user_#{current_user}"
   end
