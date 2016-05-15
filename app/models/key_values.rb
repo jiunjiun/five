@@ -17,8 +17,8 @@ module KeyValues
   class ChatActions < KeyValues::Base
     self.data = [
       {id: 1, code: Room::Actions::INIT,  name: '初始' },
-      {id: 1, code: Room::Actions::CHAT,  name: '聊天' },
-      {id: 2, code: Room::Actions::LEAVE, name: '離開' },
+      {id: 2, code: Room::Actions::CHAT,  name: '聊天' },
+      {id: 3, code: Room::Actions::LEAVE, name: '離開' },
     ]
   end
 end
