@@ -7,8 +7,9 @@ h1 Five
   /! / .panel-heading
   .panel-body#messages
     = render @messages
+
   form.panel-footer.chat-controls
-    = button_tag t('helpers.exit'), class: 'btn btn-danger exit'
+    = button_tag t('helpers.leave'), class: 'btn btn-danger leave'
     .chat-controls-input
       = text_field_tag 'content', nil, class: 'form-control', placeholder: t('helpers.say_something'), data: {behavior: "chat_speaker"}, autocomplete: 'off'
     = button_tag t('helpers.send'), class: 'btn btn-primary chat-controls-btn speak'

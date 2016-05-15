@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160513200729) do
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "user_token"
     t.string   "content"
+    t.boolean  "is_last"
     t.integer  "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160513200729) do
 
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "token"
-    t.datetime "forfeit_at"
+    t.datetime "leave_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

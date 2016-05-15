@@ -14,10 +14,6 @@ class Seek
     end
   end
 
-  def self.remove(user_token)
-    $redis.srem("seeks", user_token)
-  end
-
   def self.clear_all
     $redis.del("seeks")
   end

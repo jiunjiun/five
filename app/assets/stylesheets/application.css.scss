@@ -46,6 +46,15 @@ html, body {
     margin-left: 40%;
   }
 
-  button.exit { float: left;}
+  .message.leave {
+    .message-text {
+      background: #FFCDD2;
+      color: #C62828;
+
+      &:before { border-color: transparent #FFCDD2 transparent transparent; }
+    }
+  }
+
+  button.leave { float: left;}
   .chat-controls-input { margin-left: 55px; }
 }

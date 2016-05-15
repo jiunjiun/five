@@ -1,5 +1,5 @@
 - whosay = cookies[:user_token] if cookies[:user_token].present?
-.message class="#{self_say?(message.user_token, whosay) ? 'right' : ''}"
+.message class="#{self_say?(message.user_token, whosay) ? 'right' : ''} #{message.is_last ? 'leave' : ''}"
   .message-body
     .message-heading
       - if self_say?(message.user_token, whosay)

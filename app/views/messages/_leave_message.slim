@@ -1,0 +1,8 @@
+.message.leave
+  .message-body
+    .message-heading
+      | &nbsp;
+      span.pull-right
+        = l Time.now, format: :HMS
+    .message-text
+      = t('helpers.leave_msg')

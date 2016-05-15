@@ -5,7 +5,7 @@ class MessageBroadcastJob < ApplicationJob
     user_tokens = $redis.smembers "room_#{message.room.token}"
     user_tokens.each do |user_token|
       whosay = user_token
-      ActionCable.server.broadcast "chat_#{user_token}", message: render_message(whosay, message)
+      ActionCable.server.broadcast "chat_#{user_token}", action: Room::Actions::CHAT, message: render_message(whosay, message)
     end
   end
 
