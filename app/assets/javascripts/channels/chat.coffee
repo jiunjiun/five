@@ -4,7 +4,6 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
     # Called when the subscription is ready for use on the server
     console.log 'connected'
     $('#messages').scrollTop(99999)
-    @perform 'seek'
 
   disconnected: ->
     # Called when the subscription has been terminated by the server
@@ -19,6 +18,7 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
     switch data.action
       when 'init'
         is_leave = data.options.is_leave
+        $('body .main').addClass('hide')
       when 'leave'
         is_leave = true
 
