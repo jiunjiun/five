@@ -40,6 +40,20 @@ html, body {
   .panel-body {
     height: 86%;
     overflow: auto;
+
+    position: relative;
+    .wait_user {
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      margin: auto -20px;
+      padding: 5px 0;
+
+      color: #31708f;
+      background-color: #d9edf7;
+      border-color: #bce8f1;
+    }
   }
 
   .message .message-body {

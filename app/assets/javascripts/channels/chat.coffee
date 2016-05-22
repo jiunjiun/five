@@ -18,6 +18,8 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
     switch data.action
       when 'init'
         is_leave = data.options.is_leave
+      when 'found'
+        @found()
       when 'leave'
         is_leave = true
 
@@ -30,6 +32,7 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
 
   found: () ->
     # 發現妹子
+    $('.wait_user').addClass('hide')
 
   speak: (content) ->
     # 跟妹子說話

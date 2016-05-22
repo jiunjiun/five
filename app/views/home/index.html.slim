@@ -6,6 +6,8 @@
   /! / .panel-heading
   .panel-body#messages
     = render messages
+    .wait_user class="#{room.present? ? 'hide' : ''}"
+      = t('helpers.wait_user')
 
   form.panel-footer.chat-controls
     = button_tag t('helpers.leave'), class: 'btn btn-danger btn-flat leave'

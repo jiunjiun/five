@@ -3,6 +3,7 @@ class Room < ApplicationRecord
 
   module Actions
     INIT  = "init"
+    FOUND = "found"
     CHAT  = "chat"
     LEAVE = "leave"
   end

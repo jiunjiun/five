@@ -11,6 +11,7 @@ zh-TW:
     you_say: '他'
     leave: '離開'
     leave_msg: '你被對手打槍了!'
+    wait_user: '等待對手'
 
   time:
     formats:
