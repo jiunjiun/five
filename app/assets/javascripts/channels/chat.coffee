@@ -18,7 +18,6 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
     switch data.action
       when 'init'
         is_leave = data.options.is_leave
-        $('body .main').addClass('hide')
       when 'leave'
         is_leave = true
 
@@ -58,6 +57,8 @@ $(document).on 'click', 'button.btn.leave', ->
   unless is_leave
     swal(
       title: '確定要打槍對方?!'
+      # title: '確定要打槍對方?!'
+      title: '#'
       type: 'error'
       showCancelButton: true
       confirmButtonColor: '#3085d6'

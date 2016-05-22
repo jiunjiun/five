@@ -6,6 +6,7 @@ class Seek
       Room.create(token: room_token)
 
       Rails.logger.debug { " -- room_#{room_token}" }
+      Rails.logger.debug { " -- user_token: #{user_token}, found_user_token: #{found_user_token}" }
       $redis.sadd "room_#{room_token}", [user_token, found_user_token]
       $redis.set "user_#{user_token}", room_token
       $redis.set "user_#{found_user_token}", room_token
