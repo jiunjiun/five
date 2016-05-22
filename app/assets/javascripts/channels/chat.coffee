@@ -29,6 +29,7 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
     # 找妹子
     @perform 'seek'
     $('body .main').addClass('hide')
+    $('.widget-chat').removeClass('hide')
 
   found: () ->
     # 發現妹子
@@ -42,6 +43,7 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
     # 被妹子打槍
     @perform 'leave'
     $('body .main').removeClass('hide')
+    $('.widget-chat').addClass('hide')
 
 $(document).on 'click', '.start_chat .start', ->
   App.chat.seek()
