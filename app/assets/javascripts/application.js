@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.cookie
+//= require jquery.transit/jquery.transit.min
 //= require bootstrap
 //= require PixelAdmin/pixel-admin.min
 //= require turbolinks
