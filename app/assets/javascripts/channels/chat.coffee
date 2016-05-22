@@ -60,8 +60,6 @@ $(document).on 'click', 'button.btn.leave', ->
   unless is_leave
     swal(
       title: '確定要打槍對方?!'
-      # title: '確定要打槍對方?!'
-      title: '#'
       type: 'error'
       showCancelButton: true
       confirmButtonColor: '#3085d6'
