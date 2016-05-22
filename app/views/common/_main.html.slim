@@ -1,6 +1,6 @@
 .main.text-center class="#{room.present? ? 'hide_by_transform' : ''}"
   .header
-    .logo= image_tag('spaces/solar-system.png')
+    .logo.little_rotate= image_tag("spaces/#{random_image}")
   .content
     h1.title= t('title')
     hr/
@@ -8,5 +8,5 @@
     .start_chat
       a.start.btn.btn-primary.btn-flat href="javascript:void(0);"= t('helpers.start_chat')
   .footer
-    | Copyright © 2016 Five Chat
+    = t('copyright')
 

@@ -1,0 +1,38 @@
+@mixin animation-keyframes {
+  $animationName: unique-id();
+  animation-name: $animationName;
+
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+.little_rotate {
+  animation: 20s linear infinite;
+  @include animation-keyframes {
+    0% {
+      transform:rotate(0deg);
+    }
+    25% {
+      transform:rotate(30deg);
+    }
+    50% {
+      transform:rotate(0deg);
+    }
+    75% {
+      transform:rotate(-30deg);
+    }
+    100% {
+      transform:rotate(0deg);
+    }
+  }
+}
