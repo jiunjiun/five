@@ -39,7 +39,7 @@ html, body {
   margin-bottom: 0;
 
   .panel-body {
-    height: 86%;
+    height: 80%;
     overflow: auto;
 
     position: relative;
@@ -94,6 +94,7 @@ html, body {
 
   .header {
     padding: 10% 0;
+    height: 60%;
 
     .logo img {
       width: 60%; height: 60%;
@@ -101,6 +102,8 @@ html, body {
   }
 
   .content {
+    height: 30%;
+    
     .title {
       // color 500 by Google color
       color: #4CAF50;
@@ -121,7 +124,7 @@ html, body {
     }
 
     .start_chat {
-      padding-top: 50px;
+      padding-top: 5%;
       .btn {
         width: 80%;
         padding: 3%;
@@ -130,8 +133,8 @@ html, body {
   }
 
   .footer {
-    height: 50px;
-    margin-top: 30px;
+    height: 10%;
+    margin-top: 3%;
 
     // color 300 by Google color
     color: #81C784;
