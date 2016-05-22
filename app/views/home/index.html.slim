@@ -1,15 +1,14 @@
-h1 Five
 .panel.widget-chat
   .panel-heading
     span.panel-title
       i.panel-title-icon.fa.fa-comments-o
-      | Chat
+      = t('title')
   /! / .panel-heading
   .panel-body#messages
     = render @messages
 
   form.panel-footer.chat-controls
-    = button_tag t('helpers.leave'), class: 'btn btn-danger leave'
+    = button_tag t('helpers.leave'), class: 'btn btn-danger btn-flat leave'
     .chat-controls-input
       = text_field_tag 'content', nil, class: 'form-control', placeholder: t('helpers.say_something'), data: {behavior: "chat_speaker"}, autocomplete: 'off'
-    = button_tag t('helpers.send'), class: 'btn btn-primary chat-controls-btn speak'
+    = button_tag t('helpers.send'), class: 'btn btn-primary btn-flat chat-controls-btn speak'

@@ -27,6 +27,7 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
   seek: () ->
     # 找妹子
     @perform 'seek'
+    $('body .main').addClass('hide')
 
   found: () ->
     # 發現妹子
@@ -38,7 +39,11 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
   leave: () ->
     # 被妹子打槍
     @perform 'leave'
+    $('body .main').removeClass('hide')
 
+$(document).on 'click', '.start_chat .start', ->
+  App.chat.seek()
+  return false
 
 $(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
   if event.keyCode is 13 # return/enter = send

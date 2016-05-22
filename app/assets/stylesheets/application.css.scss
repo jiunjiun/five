@@ -15,6 +15,7 @@
  *= require PixelAdmin/widgets.min
  *= require PixelAdmin/rtl.min
  *= require PixelAdmin/themes.min
+ *= require PixelAdmin/pages.min
  */
 
 @import 'font-awesome';
@@ -26,13 +27,18 @@ html, body {
 }
 
 .container {
-  height: 85%;
+  height: 100%;
+  max-width: 550px;
+
+  position: relative;
 }
 
 .widget-chat {
   height: 100%;
+  margin-bottom: 0;
+
   .panel-body {
-    height: 85%;
+    height: 86%;
     overflow: auto;
   }
 
@@ -57,4 +63,66 @@ html, body {
 
   button.leave { float: left;}
   .chat-controls-input { margin-left: 55px; }
+}
+
+.main {
+  position: absolute;
+  top: 0;
+
+  width: 100%; height: 100%;
+  margin: 0 -11px; padding: 0 11px;
+
+  // color 50 by Google color
+  background-color: #E8EAF6;
+  background-color: #E3F2FD;
+  background-color: #E8F5E9;
+
+  .header {
+    height: 55%;
+    padding-top: 10%;
+
+    .logo img {
+      width: 65%;
+      height: 65%;
+    }
+  }
+
+  .content {
+    height: 35%;
+
+    .title {
+      // color 500 by Google color
+      color: #4CAF50;
+      font-size: 50px;
+    }
+
+    hr {
+      border-width: 2px;
+
+      // color 100 by Google color
+      border-color: #BBDEFB;
+      border-color: #C8E6C9;
+    }
+
+    .slogan {
+      // color 400 by Google color
+      color: #66BB6A;
+    }
+
+    .start_chat {
+      padding-top: 50px;
+      .btn {
+        padding-left: 100px;
+        padding-right: 100px;
+        padding: 20px 200px;
+      }
+    }
+  }
+
+  .footer {
+    height: 10%;
+
+    // color 300 by Google color
+    color: #81C784;
+  }
 }

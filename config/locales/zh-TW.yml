@@ -1,7 +1,9 @@
 zh-TW:
-  title        : 'Five'
+  title        : 'Five Chat'
 
   helpers:
+    slogan: '快來跟陌生人激烈的對決吧!!'
+    start_chat: '開始聊天'
     says: '說: '
     send: '送出'
     say_something: '說些什麼吧!'
