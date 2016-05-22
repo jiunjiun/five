@@ -1,7 +1,9 @@
 class Seek
   def self.create(user_token)
     return if Room.find_by_user_token(user_token)
-    if found_user_token = $redis.spop("seeks")
+
+    found_user_token = $redis.spop("seeks")
+    if found_user_token.present? and user_token != found_user_token
       room_token = Digest::MD5.hexdigest("#{Time.now.to_i}-#{user_token}-#{found_user_token}")
       Room.create(token: room_token)
 
