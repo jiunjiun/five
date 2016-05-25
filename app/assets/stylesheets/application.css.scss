@@ -19,6 +19,7 @@
  */
 
 @import 'animation';
+@import 'mq';
 @import 'font-awesome';
 
 html, body {
@@ -31,6 +32,9 @@ html, body {
   height: 100%;
   max-width: 550px;
 
+  padding-top: 15px;
+  padding-bottom: 15px;
+
   position: relative;
 }
 
@@ -39,7 +43,7 @@ html, body {
   margin-bottom: 0;
 
   .panel-body {
-    height: 80%;
+    height: 86%;
     overflow: auto;
 
     position: relative;
@@ -94,7 +98,6 @@ html, body {
 
   .header {
     padding: 10% 0;
-    height: 60%;
 
     .logo img {
       width: 60%; height: 60%;
@@ -103,11 +106,24 @@ html, body {
 
   .content {
     height: 30%;
-    
+
     .title {
       // color 500 by Google color
       color: #4CAF50;
-      font-size: 50px;
+      font-size: 35px;
+
+      // Apply styling to mobile and upwards
+      @include mq(mobile, tablet) {
+        font-size: 40px;
+      }
+      // Apply styling up to devices smaller than tablets (exclude tablets)
+      @include mq(tablet, desktop) {
+        font-size: 45px;
+      }
+      // Apply styling to tablets up to desktop (exclude desktop)
+      @include mq(desktop) {
+        font-size: 50px;
+      }
     }
 
     hr {
@@ -133,8 +149,11 @@ html, body {
   }
 
   .footer {
-    height: 10%;
-    margin-top: 3%;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    // margin-top: 3%;
 
     // color 300 by Google color
     color: #81C784;

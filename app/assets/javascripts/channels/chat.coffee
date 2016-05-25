@@ -28,7 +28,7 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
   seek: () ->
     # 找妹子
     @perform 'seek'
-    $('.main').transition({ y: '-100%' })
+    hide_main()
 
   found: () ->
     # 發現妹子
@@ -41,7 +41,7 @@ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best 
   leave: () ->
     # 被妹子打槍
     @perform 'leave'
-    $('.main').transition({ y: '0' })
+    show_main()
 
 $(document).on 'click', '.start_chat .start', ->
   App.chat.seek()
@@ -82,4 +82,16 @@ speak = ->
   if content.val().length > 0
     App.chat.speak content.val()
     content.val('')
+
+show_main = ->
+  $('.main').removeClass('hide')
+  $('.main').transition({ y: '0' })
+  setTimeout("$('.widget-chat').addClass('hide')", 300)
+
+hide_main = ->
+  $('.widget-chat').removeClass('hide')
+  $('.main').transition({ y: '-100%' })
+  setTimeout("$('.main').addClass('hide')", 300)
+
+
 
