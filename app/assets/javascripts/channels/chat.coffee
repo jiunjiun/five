@@ -68,11 +68,11 @@ $(document).on 'click', 'button.btn.leave', ->
       confirmButtonText: '確定打槍').then (isConfirm) ->
       if isConfirm
         App.chat.leave()
-        $('#messages').html('')
+        $('#messages .message').html('')
       return
   else
     App.chat.leave()
-    $('#messages').html('')
+    $('#messages .message').html('')
     is_leave = false
     $('.chat-controls-input input').prop('disabled', is_leave)
   return false
@@ -84,14 +84,18 @@ speak = ->
     content.val('')
 
 show_main = ->
+  $('.wait_user').addClass('hide')
   $('.main').removeClass('hide')
   $('.main').transition({ y: '0' })
   setTimeout("$('.widget-chat').addClass('hide')", 300)
 
 hide_main = ->
+  $('.wait_user').removeClass('hide')
   $('.widget-chat').removeClass('hide')
   $('.main').transition({ y: '-100%' })
   setTimeout("$('.main').addClass('hide')", 300)
+
+
 
 
 
