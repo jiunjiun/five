@@ -43,7 +43,7 @@ html, body {
   margin-bottom: 0;
 
   .panel-body {
-    height: 86%;
+    height: 85%;
     overflow: auto;
 
     position: relative;
@@ -64,11 +64,25 @@ html, body {
   .message .message-body {
     margin-left: 0;
     margin-right: 40%;
+
+    .message-text {
+      background-color: #E8F5E9;
+      &:before {
+        border-color: transparent #E8F5E9 transparent transparent;
+      }
+    }
   }
 
   .message.right .message-body {
     margin-right: 0;
     margin-left: 40%;
+
+    .message-text {
+      background-color: #f4f4f4;
+      &:before {
+        border-color: transparent #f4f4f4 transparent transparent;
+      }
+    }
   }
 
   .message.leave {
@@ -81,7 +95,7 @@ html, body {
   }
 
   button.leave { float: left;}
-  .chat-controls-input { margin-left: 55px; }
+  .chat-controls-input { margin-left: 55px; margin-left: 62px;}
 }
 
 .main {
